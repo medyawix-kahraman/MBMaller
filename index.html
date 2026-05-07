@@ -1,0 +1,1641 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="M&B Maler GmbH – Ihr professioneller Maler- und Renovierungsbetrieb in St. Gallen. Fachgerechte Malerarbeiten, Innenrenovierungen, Fassadenarbeiten und mehr. Jetzt kostenloses Angebot anfordern!" />
+  <meta name="keywords" content="Maler St. Gallen, Renovierung, Malerarbeiten, Fassade, Innenrenovierung, Badezimmer Renovation, Küche Renovation, Gossau, Herisau, Wil, Rorschach" />
+  <meta name="author" content="M&B Maler GmbH" />
+  <meta property="og:title" content="M&B Maler GmbH – Professionelle Maler- & Renovierungsarbeiten" />
+  <meta property="og:description" content="Ihr verlässlicher Partner für hochwertige Maler- und Renovierungsarbeiten in der Ostschweiz. St. Gallen, Gossau, Herisau, Wil, Rorschach." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.mbmaler.ch" />
+  <title>M&B Maler GmbH – Professionelle Maler- & Renovierungsarbeiten in St. Gallen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0f1e2e;
+      --navy-light: #162840;
+      --gold: #c9a84c;
+      --gold-light: #e2c476;
+      --cream: #f7f3ec;
+      --white: #ffffff;
+      --text-dark: #0f1e2e;
+      --text-mid: #4a5568;
+      --text-light: #718096;
+      --radius: 4px;
+      --radius-lg: 12px;
+      --shadow: 0 8px 40px rgba(15,30,46,0.12);
+      --shadow-lg: 0 20px 60px rgba(15,30,46,0.18);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--text-dark);
+      overflow-x: hidden;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    /* ─── NAVIGATION ─── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(15, 30, 46, 0.97);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(201,168,76,0.2);
+      transition: all 0.3s ease;
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .logo-mark {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      color: var(--navy);
+      font-size: 15px;
+      letter-spacing: -0.5px;
+      flex-shrink: 0;
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo-name {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      color: var(--white);
+      font-size: 17px;
+      line-height: 1.1;
+      letter-spacing: 0.3px;
+    }
+
+    .logo-sub {
+      font-size: 10px;
+      color: var(--gold);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+
+    .nav-cta {
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      color: var(--navy) !important;
+      padding: 10px 22px;
+      border-radius: var(--radius);
+      font-weight: 600 !important;
+      transition: transform 0.2s, box-shadow 0.2s !important;
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 20px rgba(201,168,76,0.4);
+    }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+      padding: 4px;
+      background: none;
+      border: none;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--white);
+      transition: all 0.3s ease;
+      border-radius: 2px;
+    }
+
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 70px; left: 0; right: 0;
+      background: var(--navy);
+      padding: 24px;
+      z-index: 999;
+      border-bottom: 2px solid var(--gold);
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .mobile-menu.open { display: flex; }
+
+    .mobile-menu a {
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 500;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      transition: color 0.2s;
+    }
+
+    .mobile-menu a:hover { color: var(--gold); }
+
+    .mobile-menu a.mobile-cta {
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      color: var(--navy);
+      text-align: center;
+      border-radius: var(--radius);
+      margin-top: 12px;
+      padding: 14px;
+      font-weight: 700;
+      border: none;
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: var(--navy);
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.18;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(15,30,46,0.95) 40%, rgba(15,30,46,0.6) 100%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 120px 24px 80px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(201,168,76,0.15);
+      border: 1px solid rgba(201,168,76,0.35);
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 8px 16px;
+      border-radius: 100px;
+      margin-bottom: 28px;
+      animation: fadeUp 0.6s ease both;
+    }
+
+    .hero-badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(38px, 5vw, 62px);
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1.08;
+      margin-bottom: 24px;
+      animation: fadeUp 0.6s 0.1s ease both;
+    }
+
+    .hero-title span {
+      color: var(--gold);
+      display: block;
+    }
+
+    .hero-desc {
+      font-size: 18px;
+      color: rgba(255,255,255,0.72);
+      margin-bottom: 40px;
+      font-weight: 300;
+      animation: fadeUp 0.6s 0.2s ease both;
+      max-width: 480px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      animation: fadeUp 0.6s 0.3s ease both;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      color: var(--navy);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 16px 32px;
+      border-radius: var(--radius);
+      transition: transform 0.2s, box-shadow 0.2s;
+      letter-spacing: 0.3px;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(201,168,76,0.45);
+    }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: 1.5px solid rgba(255,255,255,0.35);
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 15px;
+      padding: 16px 28px;
+      border-radius: var(--radius);
+      transition: all 0.2s;
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(255,255,255,0.08);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      animation: fadeUp 0.6s 0.4s ease both;
+    }
+
+    .stat-item {
+      background: rgba(255,255,255,0.04);
+      padding: 32px 24px;
+      text-align: center;
+      transition: background 0.2s;
+    }
+
+    .stat-item:hover { background: rgba(201,168,76,0.08); }
+
+    .stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      font-weight: 900;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: rgba(255,255,255,0.55);
+      letter-spacing: 0.5px;
+      font-weight: 500;
+    }
+
+    /* ─── TRUST BAR ─── */
+    .trust-bar {
+      background: var(--gold);
+      padding: 16px 24px;
+    }
+
+    .trust-bar-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--navy);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .trust-item svg { flex-shrink: 0; }
+
+    /* ─── SECTIONS ─── */
+    .section { padding: 100px 24px; }
+    .section-alt { background: var(--white); }
+
+    .container { max-width: 1200px; margin: 0 auto; }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(30px, 4vw, 46px);
+      font-weight: 900;
+      color: var(--navy);
+      line-height: 1.12;
+      margin-bottom: 20px;
+    }
+
+    .section-desc {
+      font-size: 17px;
+      color: var(--text-mid);
+      max-width: 560px;
+      font-weight: 300;
+    }
+
+    .section-header { margin-bottom: 60px; }
+
+    /* ─── SERVICES ─── */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 24px;
+    }
+
+    .service-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+    }
+
+    .section-alt .service-card {
+      background: var(--cream);
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .service-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .service-body {
+      padding: 28px;
+    }
+
+    .service-icon {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+
+    .service-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+
+    .service-desc {
+      font-size: 14px;
+      color: var(--text-mid);
+      line-height: 1.65;
+    }
+
+    .service-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--gold);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      margin-top: 16px;
+      letter-spacing: 0.3px;
+      transition: gap 0.2s;
+    }
+
+    .service-link:hover { gap: 10px; }
+
+    /* ─── ABOUT ─── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .about-img-wrap {
+      position: relative;
+    }
+
+    .about-img {
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+      border-radius: var(--radius-lg);
+      display: block;
+    }
+
+    .about-badge {
+      position: absolute;
+      bottom: -24px;
+      right: -24px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      padding: 24px;
+      border-radius: var(--radius-lg);
+      text-align: center;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .about-badge-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 42px;
+      font-weight: 900;
+      color: var(--navy);
+      line-height: 1;
+    }
+
+    .about-badge-text {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: 0.5px;
+    }
+
+    .about-content { padding-bottom: 40px; }
+
+    .about-list {
+      list-style: none;
+      margin: 28px 0 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .about-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 15px;
+      color: var(--text-mid);
+    }
+
+    .about-list li::before {
+      content: '';
+      width: 20px;
+      height: 20px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 2px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%230f1e2e'%3E%3Cpath fill-rule='evenodd' d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z' clip-rule='evenodd'/%3E%3C/svg%3E");
+      background-size: 12px;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    /* ─── WHY US ─── */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 28px;
+      margin-top: 60px;
+    }
+
+    .why-card {
+      background: var(--navy);
+      border-radius: var(--radius-lg);
+      padding: 36px 28px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+
+    .why-card:hover { transform: translateY(-4px); }
+
+    .why-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    }
+
+    .why-icon {
+      width: 52px;
+      height: 52px;
+      background: rgba(201,168,76,0.12);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      border: 1px solid rgba(201,168,76,0.2);
+    }
+
+    .why-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+
+    .why-desc {
+      font-size: 14px;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.65;
+    }
+
+    /* ─── PROCESS ─── */
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 0;
+      margin-top: 60px;
+      position: relative;
+    }
+
+    .process-grid::before {
+      content: '';
+      position: absolute;
+      top: 36px;
+      left: 10%;
+      right: 10%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+      z-index: 0;
+    }
+
+    .process-step {
+      text-align: center;
+      padding: 0 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .process-num {
+      width: 72px;
+      height: 72px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      font-weight: 900;
+      color: var(--navy);
+      margin: 0 auto 24px;
+      box-shadow: 0 4px 20px rgba(201,168,76,0.35);
+    }
+
+    .process-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+
+    .process-desc {
+      font-size: 13px;
+      color: var(--text-mid);
+      line-height: 1.6;
+    }
+
+    /* ─── REGIONS ─── */
+    .regions-section {
+      background: var(--navy);
+      padding: 80px 24px;
+    }
+
+    .regions-section .section-title { color: var(--white); }
+    .regions-section .section-desc { color: rgba(255,255,255,0.6); }
+
+    .regions-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 40px;
+    }
+
+    .region-tag {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(201,168,76,0.25);
+      color: rgba(255,255,255,0.85);
+      padding: 12px 22px;
+      border-radius: 100px;
+      font-size: 14px;
+      font-weight: 500;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .region-tag:hover {
+      background: rgba(201,168,76,0.12);
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    .region-tag::before {
+      content: '📍';
+      font-size: 13px;
+    }
+
+    /* ─── OFFER / CTA ─── */
+    .offer-section {
+      padding: 100px 24px;
+      background: var(--cream);
+    }
+
+    .offer-box {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      border-radius: 20px;
+      padding: 70px 60px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .offer-box::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(201,168,76,0.15) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .offer-box::after {
+      content: '';
+      position: absolute;
+      bottom: -60px; left: -60px;
+      width: 220px; height: 220px;
+      background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .offer-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(24px, 3vw, 36px);
+      font-weight: 900;
+      color: var(--white);
+      margin-bottom: 14px;
+      line-height: 1.15;
+    }
+
+    .offer-desc {
+      font-size: 16px;
+      color: rgba(255,255,255,0.65);
+      max-width: 480px;
+    }
+
+    .offer-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .btn-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: #25D366;
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 16px 28px;
+      border-radius: var(--radius);
+      transition: transform 0.2s, box-shadow 0.2s;
+      white-space: nowrap;
+    }
+
+    .btn-whatsapp:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(37,211,102,0.35);
+    }
+
+    .btn-email {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: 1.5px solid rgba(255,255,255,0.25);
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 14px;
+      padding: 14px 28px;
+      border-radius: var(--radius);
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .btn-email:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    /* ─── CONTACT / FOOTER ─── */
+    footer {
+      background: var(--navy);
+      padding: 80px 24px 0;
+    }
+
+    .footer-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 60px;
+      padding-bottom: 60px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .footer-brand .logo { margin-bottom: 20px; }
+
+    .footer-tagline {
+      font-size: 14px;
+      color: rgba(255,255,255,0.5);
+      max-width: 280px;
+      line-height: 1.7;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .social-link {
+      width: 40px;
+      height: 40px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .social-link:hover {
+      background: rgba(201,168,76,0.15);
+      border-color: var(--gold);
+    }
+
+    .footer-col h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
+      color: var(--white);
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-links a {
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--gold); }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .contact-icon {
+      color: var(--gold);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .contact-text {
+      font-size: 14px;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.6;
+    }
+
+    .contact-text a {
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .contact-text a:hover { color: var(--gold); }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 28px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-copy {
+      font-size: 13px;
+      color: rgba(255,255,255,0.35);
+    }
+
+    .footer-legal {
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer-legal a {
+      font-size: 13px;
+      color: rgba(255,255,255,0.35);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-legal a:hover { color: var(--gold); }
+
+    /* ─── WHATSAPP FLOAT ─── */
+    .wa-float {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 800;
+      width: 58px;
+      height: 58px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+      animation: pulse 2.5s infinite;
+    }
+
+    .wa-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 30px rgba(37,211,102,0.55);
+      animation: none;
+    }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.45); }
+      50% { box-shadow: 0 4px 30px rgba(37,211,102,0.7), 0 0 0 10px rgba(37,211,102,0.1); }
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+
+      .hero-content {
+        grid-template-columns: 1fr;
+        gap: 48px;
+        padding-top: 110px;
+      }
+
+      .hero-stats {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+      }
+
+      .about-img { height: 380px; }
+      .about-badge { right: 0; bottom: -20px; }
+      .about-content { padding-bottom: 20px; }
+
+      .offer-box {
+        grid-template-columns: 1fr;
+        gap: 36px;
+        padding: 40px 28px;
+      }
+
+      .offer-actions {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .process-grid::before { display: none; }
+    }
+
+    @media (max-width: 600px) {
+      .section { padding: 70px 20px; }
+
+      .hero-stats { grid-template-columns: 1fr; }
+
+      .stat-item { padding: 20px; }
+
+      .services-grid { grid-template-columns: 1fr; }
+
+      .trust-bar-inner { gap: 16px; }
+
+      .process-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+      }
+
+      .offer-actions { flex-direction: column; }
+
+      .btn-whatsapp, .btn-email { width: 100%; }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .wa-float { bottom: 20px; right: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- WhatsApp Float Button -->
+<a href="https://wa.me/41764995048?text=Guten%20Tag%2C%20ich%20m%C3%B6chte%20ein%20kostenloses%20Angebot%20anfragen." class="wa-float" aria-label="WhatsApp kontakt" target="_blank" rel="noopener">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+<!-- NAVIGATION -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#" class="logo">
+      <div class="logo-mark">M&B</div>
+      <div class="logo-text">
+        <span class="logo-name">M&B Maler GmbH</span>
+        <span class="logo-sub">Maler · Renovation · Qualität</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#leistungen">Leistungen</a></li>
+      <li><a href="#ueber-uns">Über uns</a></li>
+      <li><a href="#ablauf">Ablauf</a></li>
+      <li><a href="#regionen">Regionen</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+      <li><a href="#angebot" class="nav-cta">Angebot anfragen</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menü öffnen">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#leistungen" onclick="closeMenu()">Leistungen</a>
+  <a href="#ueber-uns" onclick="closeMenu()">Über uns</a>
+  <a href="#ablauf" onclick="closeMenu()">Ablauf</a>
+  <a href="#regionen" onclick="closeMenu()">Regionen</a>
+  <a href="#kontakt" onclick="closeMenu()">Kontakt</a>
+  <a href="#angebot" class="mobile-cta" onclick="closeMenu()">Kostenloses Angebot anfragen</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div>
+      <div class="hero-badge">Ihr Fachbetrieb in der Ostschweiz</div>
+      <h1 class="hero-title">
+        Handwerk mit<br>
+        <span>Leidenschaft &amp; Präzision</span>
+      </h1>
+      <p class="hero-desc">
+        Professionelle Maler- und Renovierungsarbeiten in höchster Schweizer Qualität – termingerecht, sauber und zuverlässig ausgeführt.
+      </p>
+      <div class="hero-actions">
+        <a href="#angebot" class="btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+          Kostenloses Angebot
+        </a>
+        <a href="#leistungen" class="btn-ghost">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+          Unsere Leistungen
+        </a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-number">10+</div>
+        <div class="stat-label">Jahre Erfahrung</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">500+</div>
+        <div class="stat-label">Projekte abgeschlossen</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">100%</div>
+        <div class="stat-label">Kundenzufriedenheit</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-bar-inner">
+    <div class="trust-item">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+      Kostenlose Beratung
+    </div>
+    <div class="trust-item">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+      Festpreisgarantie
+    </div>
+    <div class="trust-item">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+      Pünktliche Ausführung
+    </div>
+    <div class="trust-item">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+      Zertifizierter Fachbetrieb
+    </div>
+    <div class="trust-item">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+      Saubere Arbeitsweise
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="section" id="leistungen">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Was wir bieten</div>
+      <h2 class="section-title">Unsere Leistungen</h2>
+      <p class="section-desc">Von der Innenrenovierung bis zur Fassadengestaltung – wir realisieren Ihr Projekt mit höchster Sorgfalt und langjähriger Fachkompetenz.</p>
+    </div>
+    <div class="services-grid">
+
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=700&q=80" alt="Küchenrenovierung" class="service-img" loading="lazy" />
+        <div class="service-body">
+          <div class="service-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0f1e2e" stroke-width="2.2"><path d="M3 3h18v18H3zM3 9h18M9 21V9"/></svg>
+          </div>
+          <div class="service-title">Küchenrenovierung</div>
+          <p class="service-desc">Komplette Erneuerung Ihrer Küche – neue Oberflächen, Farbgestaltung, Fliesenarbeiten und individuelle Anpassungen für ein modernes, einladendes Ambiente.</p>
+          <a href="#angebot" class="service-link">Angebot anfragen →</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=700&q=80" alt="Badrenovierung" class="service-img" loading="lazy" />
+        <div class="service-body">
+          <div class="service-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0f1e2e" stroke-width="2.2"><path d="M2 12h20M2 12a10 10 0 0020 0"/><path d="M5 12V7a7 7 0 0114 0v5"/></svg>
+          </div>
+          <div class="service-title">Badrenovierung</div>
+          <p class="service-desc">Fachgerechte Renovation Ihres Badezimmers mit präziser Verfugung, hochwertigem Fliesenlegen, makellosem Verputz und wasserabweisenden Beschichtungen.</p>
+          <a href="#angebot" class="service-link">Angebot anfragen →</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=700&q=80" alt="Wohnraumgestaltung" class="service-img" loading="lazy" />
+        <div class="service-body">
+          <div class="service-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0f1e2e" stroke-width="2.2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <div class="service-title">Wohn- & Schlafzimmer</div>
+          <p class="service-desc">Individuelle Farbkonzepte, glatte Wandoberflächen und kreative Gestaltungsideen für Ihre privatesten Wohnräume – damit Sie sich täglich wohlfühlen.</p>
+          <a href="#angebot" class="service-link">Angebot anfragen →</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=700&q=80" alt="Büro und Geschäftsräume" class="service-img" loading="lazy" />
+        <div class="service-body">
+          <div class="service-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0f1e2e" stroke-width="2.2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+          </div>
+          <div class="service-title">Büro & Gewerberäume</div>
+          <p class="service-desc">Professionelle Renovierung von Büros, Praxen, Restaurants und Geschäftslokalen – termingerecht und mit minimaler Betriebsunterbrechung.</p>
+          <a href="#angebot" class="service-link">Angebot anfragen →</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1513584684374-8bab748fbf90?w=700&q=80" alt="Fassadenarbeiten" class="service-img" loading="lazy" />
+        <div class="service-body">
+          <div class="service-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0f1e2e" stroke-width="2.2"><path d="M2 22l10-20 10 20"/><path d="M6 18h12"/></svg>
+          </div>
+          <div class="service-title">Fassadenarbeiten</div>
+          <p class="service-desc">Nachhaltige Fassadenrenovierung mit witterungsbeständigen Materialien – für einen bleibenden ersten Eindruck und optimalen Schutz Ihrer Immobilie.</p>
+          <a href="#angebot" class="service-link">Angebot anfragen →</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=700&q=80" alt="Decken und Dacharbeiten" class="service-img" loading="lazy" />
+        <div class="service-body">
+          <div class="service-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0f1e2e" stroke-width="2.2"><path d="M4 20V10l8-7 8 7v10"/><path d="M10 20v-6h4v6"/></svg>
+          </div>
+          <div class="service-title">Decken- & Dacharbeiten</div>
+          <p class="service-desc">Reparatur von Rissen, Isolation und fachgerechte Deckenbeschichtungen – damit Ihr Dach und Ihre Decken dauerhaft dicht und ästhetisch ansprechend bleiben.</p>
+          <a href="#angebot" class="service-link">Angebot anfragen →</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=700&q=80" alt="Treppenhaus und Flur" class="service-img" loading="lazy" />
+        <div class="service-body">
+          <div class="service-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0f1e2e" stroke-width="2.2"><polyline points="4 17 4 4 20 4"/><polyline points="4 17 20 17 20 4"/></svg>
+          </div>
+          <div class="service-title">Treppenhaus & Flur</div>
+          <p class="service-desc">Vom Eingangsbereich bis zum Treppenhaus – wir gestalten alle Gemeinschafts- und Durchgangsbereiche repräsentativ, hell und einladend.</p>
+          <a href="#angebot" class="service-link">Angebot anfragen →</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=700&q=80" alt="Tapezierarbeiten" class="service-img" loading="lazy" />
+        <div class="service-body">
+          <div class="service-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0f1e2e" stroke-width="2.2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          </div>
+          <div class="service-title">Tapezierarbeiten</div>
+          <p class="service-desc">Präzises Tapezieren mit strukturierten, klassischen oder modernen Tapeten – sorgfältige Untergrundvorbereitung und passgenaue Verarbeitung garantiert.</p>
+          <a href="#angebot" class="service-link">Angebot anfragen →</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1572120360610-d971b9d7767c?w=700&q=80" alt="Spachtel und Verputz" class="service-img" loading="lazy" />
+        <div class="service-body">
+          <div class="service-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0f1e2e" stroke-width="2.2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+          </div>
+          <div class="service-title">Spachtel- & Verputzarbeiten</div>
+          <p class="service-desc">Fugenlose, makellose Wandoberflächen durch professionelles Spachteln und Verputzen – die ideale Grundlage für hochwertige Farbgebungen und Tapeten.</p>
+          <a href="#angebot" class="service-link">Angebot anfragen →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section section-alt" id="ueber-uns">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img-wrap">
+        <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80" alt="M&B Maler Team bei der Arbeit" class="about-img" loading="lazy" />
+        <div class="about-badge">
+          <div class="about-badge-num">10+</div>
+          <div class="about-badge-text">Jahre<br>Erfahrung</div>
+        </div>
+      </div>
+      <div class="about-content">
+        <div class="section-label">Über uns</div>
+        <h2 class="section-title">Qualität, die man sieht – Verlässlichkeit, die man spürt</h2>
+        <p style="color: var(--text-mid); font-size: 16px; margin-bottom: 12px;">
+          Die M&amp;B Maler GmbH ist ein inhabergeführtes Unternehmen mit Sitz in St. Gallen. Gegründet auf dem Fundament von Handwerkskunst, Leidenschaft und einem unerschütterlichen Qualitätsanspruch, haben wir uns in der Ostschweiz als verlässlicher Partner für Maler- und Renovierungsarbeiten etabliert.
+        </p>
+        <p style="color: var(--text-mid); font-size: 16px;">
+          Ob Privathaushalt oder Gewerbeobjekt – wir behandeln jedes Projekt mit derselben Sorgfalt und Hingabe. Unser erfahrenes Team arbeitet effizient, termingetreu und hinterlässt nach Abschluss der Arbeiten nicht nur makellose Ergebnisse, sondern auch einen ordentlichen Arbeitsplatz.
+        </p>
+        <ul class="about-list">
+          <li>Persönliche Beratung vor Ort – kostenlos und unverbindlich</li>
+          <li>Qualitätsmaterialien von renommierten Schweizer Marken</li>
+          <li>Transparente Festpreise – keine versteckten Kosten</li>
+          <li>Zertifizierter Gewerbebetrieb nach Schweizer Standards</li>
+          <li>Mehrsprachiges Team – Deutsch, Türkisch und weitere Sprachen</li>
+          <li>Vollversichert und haftpflichtversichert</li>
+        </ul>
+        <a href="#angebot" class="btn-primary" style="display: inline-flex;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.63 19.79 19.79 0 01.06 1a2 2 0 012-2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 6.34a16 16 0 006.29 6.29l.91-.91a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          Jetzt Beratungsgespräch vereinbaren
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="section">
+  <div class="container">
+    <div class="section-header" style="text-align: center; max-width: 600px; margin: 0 auto 0;">
+      <div class="section-label">Unsere Stärken</div>
+      <h2 class="section-title">Warum M&amp;B Maler GmbH?</h2>
+      <p class="section-desc" style="margin: 0 auto;">Unsere Kunden schätzen nicht nur das Ergebnis – sondern auch den Weg dorthin.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="why-title">Schweizer Qualitätsstandard</div>
+        <p class="why-desc">Jeder Handgriff folgt den strengen Qualitätsrichtlinien des Schweizer Malerhandwerks – für Resultate, die jahrelang überzeugen.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div class="why-title">Pünktlichkeit garantiert</div>
+        <p class="why-desc">Wir halten, was wir versprechen: Ihre Renovierung wird fristgerecht abgeschlossen – damit Sie Ihren Alltag weiterplanen können.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+        </div>
+        <div class="why-title">Transparente Preisgestaltung</div>
+        <p class="why-desc">Unser detailliertes Angebot lässt keine Fragen offen. Keine Überraschungen bei der Schlussrechnung – wir arbeiten mit Festpreisen.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <div class="why-title">Erfahrenes Fachteam</div>
+        <p class="why-desc">Unser eingespieltes Team bringt jahrelange Erfahrung in der Renovation mit – jeder Handwerker ist in seinem Fachbereich spezialisiert.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        </div>
+        <div class="why-title">Saubere & respektvolle Arbeit</div>
+        <p class="why-desc">Wir schützen Ihre Möbel, Böden und Einrichtung sorgfältig – und hinterlassen Ihr Zuhause so sauber, wie wir es vorgefunden haben.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <div class="why-title">Rundum-Sorglos-Service</div>
+        <p class="why-desc">Von der ersten Beratung bis zur finalen Abnahme begleiten wir Sie persönlich – für ein stressfreies Renovierungserlebnis von A bis Z.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section section-alt" id="ablauf">
+  <div class="container">
+    <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+      <div class="section-label">So funktioniert es</div>
+      <h2 class="section-title">Ihr Weg zur perfekten Renovation</h2>
+      <p class="section-desc" style="margin: 0 auto;">In vier klaren Schritten von der Idee zum fertigen Ergebnis – unkompliziert, transparent und zuverlässig.</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-step">
+        <div class="process-num">1</div>
+        <div class="process-title">Kontaktaufnahme</div>
+        <p class="process-desc">Rufen Sie uns an, schreiben Sie eine E-Mail oder kontaktieren Sie uns per WhatsApp – wir melden uns prompt bei Ihnen.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-num">2</div>
+        <div class="process-title">Beratung vor Ort</div>
+        <p class="process-desc">Wir besichtigen Ihr Objekt persönlich, besprechen Ihre Wünsche und entwickeln gemeinsam das optimale Konzept.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-num">3</div>
+        <div class="process-title">Angebot & Planung</div>
+        <p class="process-desc">Sie erhalten ein detailliertes Festpreisangebot. Nach Ihrer Auftragserteilung planen wir den genauen Ausführungstermin.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-num">4</div>
+        <div class="process-title">Ausführung & Übergabe</div>
+        <p class="process-desc">Unser Team führt die Arbeiten professionell aus. Die Übergabe erfolgt erst nach Ihrer vollständigen Zufriedenheit.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REGIONS -->
+<section class="regions-section" id="regionen">
+  <div class="container">
+    <div class="section-label" style="color: var(--gold);">Unser Einzugsgebiet</div>
+    <h2 class="section-title">Hizmet verdiğimiz bölgeler</h2>
+    <p class="section-desc">Wir sind in der gesamten Ostschweiz für Sie im Einsatz. Kontaktieren Sie uns – auch wenn Ihr Standort nicht aufgeführt ist, finden wir gemeinsam eine Lösung.</p>
+    <div class="regions-grid">
+      <div class="region-tag">St. Gallen</div>
+      <div class="region-tag">Gossau</div>
+      <div class="region-tag">Herisau</div>
+      <div class="region-tag">Wil</div>
+      <div class="region-tag">Rorschach</div>
+      <div class="region-tag">Arbon</div>
+      <div class="region-tag">Romanshorn</div>
+      <div class="region-tag">Uzwil</div>
+      <div class="region-tag">Flawil</div>
+      <div class="region-tag">Wittenbach</div>
+      <div class="region-tag">Gaiserwald</div>
+      <div class="region-tag">Teufen</div>
+      <div class="region-tag">Appenzell</div>
+      <div class="region-tag">Umgebung & weitere Regionen</div>
+    </div>
+  </div>
+</section>
+
+<!-- OFFER / CTA -->
+<section class="offer-section" id="angebot">
+  <div class="container">
+    <div class="offer-box">
+      <div>
+        <div class="section-label" style="color: var(--gold-light);">Kostenloses Angebot</div>
+        <h2 class="offer-title">Bereit für Ihre nächste Renovation?</h2>
+        <p class="offer-desc">Kontaktieren Sie uns noch heute für eine unverbindliche Beratung. Wir freuen uns darauf, Ihr Projekt kennenzulernen und Ihnen ein massgeschneidertes Angebot zu unterbreiten.</p>
+        <div style="margin-top: 28px; display: flex; gap: 20px; flex-wrap: wrap;">
+          <div style="color: rgba(255,255,255,0.7); font-size: 14px; display: flex; align-items: center; gap: 8px;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Kostenlos &amp; unverbindlich
+          </div>
+          <div style="color: rgba(255,255,255,0.7); font-size: 14px; display: flex; align-items: center; gap: 8px;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Antwort innert 24 Stunden
+          </div>
+        </div>
+      </div>
+      <div class="offer-actions">
+        <a href="https://wa.me/41764995048?text=Guten%20Tag%2C%20ich%20m%C3%B6chte%20ein%20kostenloses%20Angebot%20f%C3%BCr%20mein%20Renovierungsprojekt%20anfragen." class="btn-whatsapp" target="_blank" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp schreiben
+        </a>
+        <a href="mailto:info@mbmaler.ch?subject=Angebotsanfrage%20Renovierung" class="btn-email">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          E-Mail senden
+        </a>
+        <a href="tel:+41764995048" class="btn-email">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.63 19.79 19.79 0 01.06 1a2 2 0 012-2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 6.34a16 16 0 006.29 6.29l.91-.91a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          +41 76 499 50 48
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER / KONTAKT -->
+<footer id="kontakt">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#" class="logo">
+        <div class="logo-mark">M&B</div>
+        <div class="logo-text">
+          <span class="logo-name">M&B Maler GmbH</span>
+          <span class="logo-sub">Maler · Renovation · Qualität</span>
+        </div>
+      </a>
+      <p class="footer-tagline">
+        Ihr zuverlässiger Partner für professionelle Maler- und Renovierungsarbeiten in der Ostschweiz. Qualität, die überzeugt – seit über einem Jahrzehnt.
+      </p>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/mb_maler" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="https://wa.me/41764995048" target="_blank" rel="noopener" class="social-link" aria-label="WhatsApp">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#c9a84c"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
+        <a href="mailto:info@mbmaler.ch" class="social-link" aria-label="E-Mail">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Leistungen</h4>
+      <ul class="footer-links">
+        <li><a href="#leistungen">Küchenrenovierung</a></li>
+        <li><a href="#leistungen">Badrenovierung</a></li>
+        <li><a href="#leistungen">Wohn- & Schlafzimmer</a></li>
+        <li><a href="#leistungen">Büro & Gewerbe</a></li>
+        <li><a href="#leistungen">Fassadenarbeiten</a></li>
+        <li><a href="#leistungen">Decken- & Dacharbeiten</a></li>
+        <li><a href="#leistungen">Tapezierarbeiten</a></li>
+        <li><a href="#leistungen">Spachtel- & Verputz</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Kontakt</h4>
+      <div class="contact-item">
+        <svg class="contact-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <div class="contact-text">
+          Moosgartenstrasse 5<br>
+          9015 St. Gallen<br>
+          Schweiz
+        </div>
+      </div>
+      <div class="contact-item">
+        <svg class="contact-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.63 19.79 19.79 0 01.06 1a2 2 0 012-2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 6.34a16 16 0 006.29 6.29l.91-.91a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+        <div class="contact-text">
+          <a href="tel:+41764995048">+41 (0) 76 499 50 48</a>
+        </div>
+      </div>
+      <div class="contact-item">
+        <svg class="contact-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <div class="contact-text">
+          <a href="mailto:info@mbmaler.ch">info@mbmaler.ch</a>
+        </div>
+      </div>
+      <div class="contact-item">
+        <svg class="contact-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <div class="contact-text">
+          Mo–Fr: 07:00 – 18:00 Uhr<br>
+          Sa: 08:00 – 14:00 Uhr
+        </div>
+      </div>
+      <a href="https://wa.me/41764995048?text=Guten%20Tag%2C%20ich%20m%C3%B6chte%20ein%20kostenloses%20Beratungsgespr%C3%A4ch%20vereinbaren." class="btn-whatsapp" style="margin-top: 16px; font-size: 13px; padding: 12px 20px;" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Jetzt WhatsApp schreiben
+      </a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2025 M&B Maler GmbH · Alle Rechte vorbehalten · St. Gallen, Schweiz</p>
+    <div class="footer-legal">
+      <a href="#">Impressum</a>
+      <a href="#">Datenschutz</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Hamburger menu
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+  });
+
+  function closeMenu() {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+  }
+
+  // Close menu on outside click
+  document.addEventListener('click', (e) => {
+    if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+      closeMenu();
+    }
+  });
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (href === '#') return;
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if (target) {
+        const offset = 70;
+        const top = target.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+    });
+  });
+
+  // Scroll animation
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.service-card, .why-card, .process-step, .region-tag, .stat-item').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(24px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
